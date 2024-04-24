@@ -61,18 +61,24 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate done");
     }
 
-    public void onSubmit(View view) throws IOException
+    public void onSubmit(View view)
     {
         lastw[lasts] = picker1.getValue() + picker2.getValue()/10.0f;
         Log.d(TAG, String.format("%d %.1f, %.1f %.1f", lasts, lastw[lasts], lastw[0], lastw[1]));
-        String msg = String.format("%s %.1f", s[lasts], lastw[lasts]);
-        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
-
         String url = String.format("https://server/script.php?s=%s&v=%.1f", s[lasts], lastw[lasts]);
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url(url).build();
+        try
+        {
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder().url(url).build();
+            client.newCall(request).execute();
 
-        client.newCall(request).execute();
+            String msg = String.format("%s %.1f", s[lasts], lastw[lasts]);
+            Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+        }
+        catch (IOException e)
+        {
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
         Log.d(TAG, "onSubmit done");
     }
 
