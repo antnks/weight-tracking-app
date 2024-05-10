@@ -8,6 +8,8 @@ Mount an old Android phone above your scales and start tracking.
 
 Build the project with Android Studio: [android/](android/)
 
+Update the [MainActivity.java](https://github.com/antnks/weight-tracking-app/blob/main/android/app/src/main/java/com/github/antnks/android/counter/MainActivity.java#L68) and put your server address.
+
 ![android.jpg](android.jpg)
 
 Switch button switches profiles. Currently supports two profiles (blue and pink colors).
