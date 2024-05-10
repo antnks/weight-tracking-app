@@ -13,6 +13,7 @@ Update the [MainActivity.java](https://github.com/antnks/weight-tracking-app/blo
 ![android.jpg](android.jpg)
 
 Switch button switches profiles. Currently supports two profiles (blue and pink colors).
+
 Upload sends data to php script on the server.
 
 # Server php script
