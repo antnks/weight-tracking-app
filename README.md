@@ -1,6 +1,8 @@
 # weight-tracking-app
 
-A simple Android app to submit numbers to a remote HTTPS server and store them as CSV
+A simple Android app to submit numbers to a remote HTTPS server and store them as CSV.
+
+Mount an old Android phone above your scales and start tracking.
 
 # Android app
 
